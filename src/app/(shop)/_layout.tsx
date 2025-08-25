@@ -1,22 +1,26 @@
+import React from "react";
 import { Tabs } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StyleSheet } from "react-native";
+import { FontAwesome } from "@expo/vector-icons"
+
+function TabBarIcon(props: {
+    name: React.ComponentProps<typeof FontAwesome>['name'];
+    color: string;
+}) {
+    return <FontAwesome size={24} {...props} style={{ color: props.color }}/>;
+}
 
 const TabsLayout = () => {
     return (
-        <SafeAreaView style={styles.SafeArea}>
+        <SafeAreaView edges={['top']} style={styles.SafeArea}>
             <Tabs
             screenOptions={ {
                 tabBarActiveTintColor: 'tomato',
                 tabBarInactiveTintColor: 'gray',
                 tabBarStyle: {
-                    backgroundColor: '#fff',
-                    borderTopColor: '#eee',
                     borderTopLeftRadius: 20,
                     borderTopRightRadius: 20,
-                    borderTopWidth: 1,
-                    height: 60,
-                    paddingBottom: 5,
                     paddingTop: 8,
                 },
                 tabBarLabelStyle: {
@@ -25,10 +29,23 @@ const TabsLayout = () => {
                 headerShown: false,
             }}
             >
-            <Tabs.Screen name="index" options={{
-                headerShown: false
+            <Tabs.Screen 
+            name="index" 
+            options={{
+                 title: "Shop",
+                tabBarIcon(props) {
+                    const { color } = props;
+                    return <TabBarIcon name="shopping-cart" color={color} />;
+                },
             }}/>
-            <Tabs.Screen name="orders" options={{
+            <Tabs.Screen 
+            name="orders" 
+            options={{
+                title: "Orders",
+                tabBarIcon(props) {
+                    const { color } = props;
+                    return <TabBarIcon name="book" color={color} />;
+                },
                 headerShown: false
             }}/>
         </Tabs>
@@ -42,5 +59,5 @@ const styles = StyleSheet.create({
     SafeArea: {
         flex: 1,
 
-    }
+    },
 })

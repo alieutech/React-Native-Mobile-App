@@ -1,10 +1,24 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
 import React from 'react'
+import { PRODUCTS } from '../../../assets/products'
 
 const Home = () => {
   return (
     <View>
-      <Text>Home</Text>
+      <FlatList
+       data={PRODUCTS} 
+       renderItem={({ item }) => (
+         <View>
+        <Text>{item.title}</Text>
+       </View>
+       )}
+       keyExtractor={item => item.id.toString()}
+       numColumns={2}
+       ListHeaderComponent={<Text>Product</Text>}
+       contentContainerStyle={styles.flatListContainainer}
+       columnWrapperStyle={styles.flatListColumn}
+       style={{paddingHorizontal: 10, paddingVertical: 5}}
+       />
     </View>
   )
 }
@@ -12,9 +26,10 @@ const Home = () => {
 export default Home
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  flatListContainainer: {
+    padding: 20,
   },
+  flatListColumn: {
+    justifyContent: "space-between"
+  }
 })
