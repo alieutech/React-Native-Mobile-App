@@ -1,13 +1,16 @@
 import { Stack } from "expo-router";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function RootLayout() {
 return (
-    <Stack>
-        <Stack.Screen name="(shop)" options={{headerShown: false, title: "Shop"}} />
-        <Stack.Screen name="categories" options={{headerShown: true, title: "Categoris"}}/>
-        <Stack.Screen name="product" options={{headerShown: true, title: "Product"}}/>
-        <Stack.Screen name="auth" options={{headerShown: true, title: "Auth"}} />
-        <Stack.Screen name="cart" options={{presentation: "modal", title: "Shopping Cart"}} />
-    </Stack>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+        <Stack>
+            <Stack.Screen name="(shop)" options={{headerShown: false, title: "Shop"}} />
+            <Stack.Screen name="categories" options={{headerShown: true, title: "Categoris"}}/>
+            <Stack.Screen name="product" options={{headerShown: true, title: "Product"}}/>
+            <Stack.Screen name="auth" options={{headerShown: true, title: "Auth"}} />
+            <Stack.Screen name="cart" options={{presentation: "modal", title: "Shopping Cart"}} />
+        </Stack>
+    </GestureHandlerRootView>
 )
 }

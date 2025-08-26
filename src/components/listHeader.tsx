@@ -1,7 +1,8 @@
 import { Link } from 'expo-router';
-import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { FontAwesome } from "@expo/vector-icons";
 import Swiper from 'react-native-swiper';
+import { CATEGORIES } from '../../assets/categories';
 
 const heroImages = [
   require('../../assets/images/iphone_.jpg'),
@@ -53,8 +54,25 @@ const ListHeader = () => {
         </Swiper>
       </View>
 
-      {/* Categories (later) */}
-      <View style={styles.categoriesContainer}></View>
+      {/* Categories */}
+      <View style={styles.categoriesContainer}>
+        <Text style={styles.sectionTitle}>Categories</Text>
+        <FlatList
+          data={CATEGORIES}
+          renderItem={({ item }) => (
+            <Link asChild href={`/categories/${item.slug}`}>
+              <Pressable style={styles.category}>
+                <Image source={{uri: item.imageUrl}} style={styles.categoryImage} />
+                <Text style={styles.categoryText}>{item.name}</Text>
+              </Pressable>
+            </Link>
+          )}
+          keyExtractor={item => item.id}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingHorizontal: 5 }}
+        />
+      </View>
     </View>
   )
 }
@@ -88,4 +106,27 @@ const styles = StyleSheet.create({
   badgeText: { color: 'white', fontSize: 12, fontWeight: 'bold' },
   dot: { backgroundColor: 'rgba(255,255,255,0.4)', width: 8, height: 8, borderRadius: 4, margin: 3 },
   activeDot: { backgroundColor: '#1BC464', width: 8, height: 8, borderRadius: 4, margin: 3 },
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  category: {
+    width: 100,
+    alignItems: 'center',
+    marginBottom: 15,
+    marginRight: 10,
+
+  },
+  categoryImage: {
+    width: 75,
+    height: 70,
+    borderRadius: 30,
+    marginBottom: 8,
+  },
+  
+  categoryText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
 });

@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, FlatList } from 'react-native'
 import React from 'react'
 import { PRODUCTS } from '../../../assets/products'
 import { ProductListItem } from '../../components/productListItem'
-import ListHeader from "../../components/listerHeader";
+import ListHeader from "../../components/listHeader";
 
 const Home = () => {
   return (
