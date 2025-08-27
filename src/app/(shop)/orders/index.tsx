@@ -3,10 +3,13 @@ import React, { useState } from 'react'
 import { ORDERS } from '../../../../assets/orders'
 import { Swipeable, RectButton } from 'react-native-gesture-handler'
 
+
 const Orders = () => {
   const [orders, setOrders] = useState(ORDERS)
 
   const handleDelete = (id: string) => {
+    // later: integrate with backend to delete order from database
+    // For now, just deleting it from local state
     Alert.alert('Delete Order', 'Are you sure you want to delete this order?', [
       { text: 'Cancel', style: 'cancel' },
       {
