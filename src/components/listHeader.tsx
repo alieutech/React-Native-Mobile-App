@@ -3,6 +3,7 @@ import { FlatList, Image, Pressable, StyleSheet, Text, TouchableOpacity, View } 
 import { FontAwesome } from "@expo/vector-icons";
 import Swiper from 'react-native-swiper';
 import { CATEGORIES } from '../../assets/categories';
+import { useCartStore } from '../store/cartStore';
 
 const heroImages = [
   require('../../assets/images/iphone_.jpg'),
@@ -11,6 +12,7 @@ const heroImages = [
 ];
 
 const ListHeader = () => {
+  const { getItemCount } = useCartStore() 
   return (
     <View style={styles.headerContainer}>
       {/* Top Bar */}
@@ -33,7 +35,9 @@ const ListHeader = () => {
                     style={{ marginLeft: 2, opacity: pressed ? 0.5 : 1 }}
                   />
                   <View style={styles.badgeContainer}>
-                    <Text style={styles.badgeText}>{3}</Text>
+                    <Text style={styles.badgeText}>
+                      {getItemCount()}
+                    </Text>
                   </View>
                 </View>
               )}

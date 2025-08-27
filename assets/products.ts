@@ -12,7 +12,7 @@ export const PRODUCTS: Product[] = [
     ],
     price: 899.99,
     category: {
-      id: '1',
+      id: 1,
       imageUrl: require('../assets/images/pc_3.jpg'),
       name: 'Laptops',
       slug: 'laptops',
@@ -30,7 +30,7 @@ export const PRODUCTS: Product[] = [
     ],
     price: 1099.99,
     category: {
-      id: '2',
+      id: 2,
       imageUrl: require('../assets/images/dell-2.jpg'),
       name: 'Laptops',
       slug: 'laptops',
@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
     ],
     price: 999.99,
     category: {
-      id: '3',
+      id: 3,
       imageUrl: require('../assets/images/i-phone-1.jpg'),
       name: 'Phones',
       slug: 'phones',
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     ],
     price: 799.99,
     category: {
-      id: '4',
+      id: 4,
       imageUrl: require('../assets/images/iphone.jpg'),
       name: 'I-Phones',
       slug: 'i-phones',
@@ -85,7 +85,7 @@ export const PRODUCTS: Product[] = [
     ],
     price: 499.99,
     category: {
-      id: '5',
+      id: 5,
       imageUrl: require('../assets/images/Headset-1.jpg'),
       name: 'Accessories',
       slug: 'accessories',
@@ -104,29 +104,12 @@ export const PRODUCTS: Product[] = [
     ],
     price: 699.99,
     category: {
-      id: '6',
+      id: 6,
       imageUrl: require('../assets/images/playstation.jpg'),
       name: 'Gaming',
       slug: 'gaming',
     },
     maxQuantity: 3,
   },
-//   {
-//     id: 7,
-//     title: 'Nintendo Switch',
-//     slug: 'nintendo-switch',
-//     heroImage: require('../assets/images/nintendo-switch-1.jpg'),
-//     imagesUrl: [
-//       require('../assets/images/nintendo-switch-1.jpg'),
-//       require('../assets/images/nintendo-switch-2.jpg'),
-//     ],
-//     price: 299.99,
-//     category: {
-//       id: '7',
-//       imageUrl: require('../assets/images/nintendo-switch-1.jpg'),
-//       name: 'Gaming',
-//       slug: 'gaming',
-//     },
-//     maxQuantity: 8,
-//   },
+
 ];

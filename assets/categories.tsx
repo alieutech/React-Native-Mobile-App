@@ -3,7 +3,7 @@ import { PRODUCTS } from './products';
 
 export const CATEGORIES: Category[] = [
   {
-    id: 'laptops',
+    id: 1,
     name: 'Laptops',
     slug: 'laptops',
     imageUrl:
@@ -11,7 +11,7 @@ export const CATEGORIES: Category[] = [
     products: PRODUCTS.filter(product => product.category.slug === 'laptops'),
   },
   {
-    id: 'phones',
+    id: 2,
     name: 'Phones',
     slug: 'phones',
     imageUrl:
@@ -19,7 +19,7 @@ export const CATEGORIES: Category[] = [
     products: PRODUCTS.filter(product => product.category.slug === 'phones'),
   },
   {
-    id: 'gaming',
+    id: 3,
     name: 'Gaming',
     slug: 'gaming',
     imageUrl:
@@ -27,7 +27,7 @@ export const CATEGORIES: Category[] = [
     products: PRODUCTS.filter(product => product.category.slug === 'gaming'),
   },
   {
-    id: 'accessories',
+    id: 4,
     name: 'Accessories',
     slug: 'accessories',
     imageUrl:

@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, FlatList, Image, Pressable } from 'react-native'
-import { useLocalSearchParams, useRouter } from 'expo-router'
+import { Redirect, useLocalSearchParams, useRouter } from 'expo-router'
 import { PRODUCTS } from '../../../assets/products'
+
+
 const Category = () => {
   const { slug } = useLocalSearchParams() 
   const router = useRouter()
@@ -12,6 +14,7 @@ const Category = () => {
 
   // Get category name from first product in that category
   const categoryName = categoryProducts[0]?.category.name || 'Category'
+
 
   return (
     <View style={styles.container}>
